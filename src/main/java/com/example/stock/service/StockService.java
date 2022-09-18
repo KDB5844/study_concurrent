@@ -19,7 +19,6 @@ public class StockService {
         // 트랜잭션을 시작 -> decrease() 호출 -> 트랜잭션 종료
         // 트랜잭션 종료 이전에 접근해온 쓰레드는 commit이 안된 값을 들고 있음
 
-
         Stock stock = stockRepository.findById(id).orElseThrow();
 
         stock.decrease(quantity);
