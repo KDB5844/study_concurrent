@@ -1,14 +1,9 @@
 package com.example.stock.domain;
 
-import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import org.springframework.transaction.annotation.Transactional;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 import static lombok.AccessLevel.PROTECTED;
 
@@ -25,6 +20,9 @@ public class Stock {
     private Long quantityId;
 
     private Long quantity;
+
+    @Version
+    private Long version;
 
     public Stock(Long quantityId, Long quantity) {
         this.quantityId = quantityId;
